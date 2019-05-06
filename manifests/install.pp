@@ -27,6 +27,7 @@ class docker::install {
                                         'linux-headers-generic-lts-trusty'
                                       ]
           }
+          '16.04': { $kernelpackage = "linux-modules-extra-${::kernelrelease}" }
           # determine the package name for 'linux-image-extra-$(uname -r)' based
           # on the $::kernelrelease fact
           default: { $kernelpackage = "linux-image-extra-${::kernelrelease}" }
